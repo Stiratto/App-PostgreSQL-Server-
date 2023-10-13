@@ -27,9 +27,9 @@ const getSingleTask = async (req, res, next) => {
 
 const createTask = async (req, res, next) => {
     try {
-        const {title, description} = req.body
+        const {title, description, task_created_at} = req.body
             // RETURNING *: 'Give me the task that is being created and print it out inside the rows object'
-        const result = await pool.query('INSERT INTO task (title, description) VALUES ($1, $2) RETURNING *', [title, description])
+        const result = await pool.query('INSERT INTO task (title, description, task_created_at) VALUES ($1, $2, $3) RETURNING *', [title, description, task_created_at])
         res.json(result.rows[0])
     }catch(err){
         next(err)
