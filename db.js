@@ -6,7 +6,8 @@ const pool = new pg.Pool({
     password: db.password,
     host: db.host,
     port: db.port,
-    database: db.database
+    database: db.database,
+    ssl: true
 })
 
 pool.on('connect', () => console.log('DB connected'))
