@@ -7,6 +7,7 @@ const pool = new pg.Pool({
     host: db.host,
     port: db.port,
     database: db.database,
+    ssl: true
 })
 
 
