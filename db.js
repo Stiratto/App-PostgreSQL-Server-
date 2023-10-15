@@ -10,6 +10,9 @@ const pool = new pg.Pool({
     ssl: true
 })
 
-pool.on('connect', () => console.log('DB connected'))
+var conString = "https://app-postgresql-server.onrender.com";
+var client = new pg.Client(conString);
+client.connect();
+
 
 module.exports = pool
