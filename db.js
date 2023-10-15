@@ -10,7 +10,7 @@ const pool = new pg.Pool({
     ssl: true
 })
 
-var conString = "https://app-postgresql-server.onrender.com";
+var conString = "postgres://postgres:1234@db-endpoint:5432/"
 var client = new pg.Client(conString);
 client.connect();
 
